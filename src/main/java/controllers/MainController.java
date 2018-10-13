@@ -6,6 +6,7 @@ Date: 13.10.2018
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import services.JokeService;
 
@@ -20,9 +21,14 @@ public class MainController
         this.jokeService = jokeService;
     }
 
+    /* spring automatycznie podaje Model jesli
+    * ustawimyy go jjako parametr */
+
     @RequestMapping({"/",""})
-    public String showJoke()
+    public String showJoke(Model model)
     {
-        return "main-page";
+        model.addAttribute("joke",jokeService.getJoke())
+
+        return "chuck-norris";
     }
 }
