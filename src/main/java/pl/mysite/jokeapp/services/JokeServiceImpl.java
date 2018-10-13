@@ -1,4 +1,4 @@
-package services;
+package pl.mysite.jokeapp.services;
 /*
 Author: BeGieU
 Date: 13.10.2018
@@ -14,10 +14,9 @@ public class JokeServiceImpl implements JokeService
 {
     private final ChuckNorrisQuotes chuckNorrisQuotes;
 
-    @Autowired
-    public JokeServiceImpl(ChuckNorrisQuotes chuckNorrisQuotes)
+    public JokeServiceImpl( )
     {
-        this.chuckNorrisQuotes = chuckNorrisQuotes;
+        this.chuckNorrisQuotes = new ChuckNorrisQuotes();
     }
 
     @Override
@@ -26,8 +25,4 @@ public class JokeServiceImpl implements JokeService
         return chuckNorrisQuotes.getRandomQuote();
     }
 
-    public static void main(String[] args)
-    {
-
-    }
 }

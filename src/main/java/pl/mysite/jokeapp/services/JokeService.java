@@ -1,4 +1,4 @@
-package services;
+package pl.mysite.jokeapp.services;
 /*
 Author: BeGieU
 Date: 13.10.2018
